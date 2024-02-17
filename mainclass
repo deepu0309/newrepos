@@ -1,0 +1,15 @@
+package TestPackage;
+
+
+import TestPackage.Testclassforoutput;
+public class mainclasstotest {
+	public static void main(String[] args) {
+		String testInput="000001#                          *8175 5100 0090 6966#           28112311   XShridhar Lanje     >                          \"%B8175510000906966^Shridhar Nilkanthrao Lanj/^2811620544A00000000000000000000?  875 ;8175510000906966=28116205440000000000? `                `964`   `      |*UAX0000578020*|*438934175*|*000001*|Shridhar Nilkanthrao Lanje                                                                          |274,nahar road,Sendurwafa                                                                           |pragati colony,                                                                                     |Bhandara                                          |Maharashtra         |India               |441802 M: +919404817870|Amazon Surface 500gm Prepaid                      |*338022526728|*Amazon Surface 500gm Prepaid*";
+		Testclassforoutput tb=new Testclassforoutput();
+		String testOutput=tb.Sequence(testInput)+"$"+tb.getCardNows(testInput)+"#"+tb.getidMMYY(testInput)+" "+tb.getedMMYY(testInput)+" "+tb.getl4dCardNo(testInput)+"*"+tb.Cvv2(testInput)+"&"+tb.getCardHolderName(testInput)+" @"+tb.Icvv(testInput)+"["+tb.t1data(testInput)+tb.t2data(testInput)+":"+tb.getaedate(testInput)+tb.t2edata(testInput)+tb.t1dd(testInput)+"]";
+		//String st=testOutput.replaceAll("\\s", "");
+        System.out.println(testOutput);
+		//System.out.println(st);
+		
+	}
+}
