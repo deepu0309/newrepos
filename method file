@@ -1,0 +1,298 @@
+package TestPackage;
+
+import java.security.PublicKey;
+
+
+public class Testclassforoutput {
+	public String Cvv2(String lineForCvv2) //CVV2 Extraction
+	  {	  int j=0;
+	  char[] Cvvv2=lineForCvv2.toCharArray();
+	  char[] cvv2= new char[3];
+	  for(int i=204;i<207;i++)
+	  {	  
+		  cvv2[j]=Cvvv2[i];
+		  j++;
+		  
+	  }
+	  String CVV2 = new String(cvv2);
+	  return CVV2;
+	  }
+	
+	public String Icvv(String lineForIcvv) //icvv extraction 
+	  {	  int j=0;
+	  char[] icvv=lineForIcvv.toCharArray();
+	  char[] ICVV= new char[3];
+	  for(int i=266;i<269;i++)
+	  {	  
+		  ICVV[j]=icvv[i];
+		  j++;
+		  
+	  }
+	  String newIcvv = new String(ICVV);
+	  return newIcvv ;
+	  }
+	
+	public String Cvv1(String lineForCvv1) //CVV1 Extraction
+	  {	  int j=0;
+	  char[] Cvvv1=lineForCvv1.toCharArray();
+	  char[] cvv1= new char[3];
+	  for(int i=233;i<235;i++)
+	  {	  
+		  cvv1[j]=Cvvv1[i];
+		  j++;
+		  
+	  }
+	  String CVV1 = new String(cvv1);
+	  return CVV1;
+	  }
+	
+	public String ServiceCode(String lineForServiceCode) //Service Code Extraction
+	  {	  int j=0;
+	  char[] serviceCode=lineForServiceCode.toCharArray();
+	  char[] serCode= new char[3];
+	  for(int i=174;i<176;i++)
+	  {	  
+		  serCode[j]=serviceCode[i];
+		  j++;
+		  
+	  }
+	  String serviceeCode = new String(serCode);
+	  return serviceeCode;
+	  }
+	
+	public String AdharNum(String lineForAdharNum) //Addhar Number Extraction
+	  {	  int j=0;
+	  char[] adharNum=lineForAdharNum.toCharArray();//string to char conversion 
+	  char[] addharNumber= new char[13];
+	  for(int i=180;i<192;i++)
+	  {	  
+		  addharNumber[j]=adharNum[i];
+		  j++;
+		  
+	  }
+	  String addharCardNum = new String(addharNumber);
+	  return addharCardNum ;
+	  }
+	
+	public String Sequence(String lineForSequence) //sequence Number Extraction
+	  {	  int j=0;
+	  char[] aSequenceNum=lineForSequence.toCharArray();//string to char conversion 
+	  char[] sequence= new char[6];
+	  for(int i=0;i<6;i++)
+	  {	  
+		  sequence[j]=aSequenceNum[i];
+		  j++;
+		  
+	  }
+	  String serialNumber = new String(sequence);
+	  return serialNumber ;
+	  }
+	
+	public String getCardNo(String lineForCN) //cardno extraction
+	  {	  int j=0;
+		  char[] cardNo=lineForCN.toCharArray();
+		  char[] scardNo= new char[16];
+		  for(int i=34;i<53;i++)
+		  {	  if(cardNo[i]!=' ')
+			  {
+			  	scardNo[j]=cardNo[i];
+			  	j++;
+			  }
+		  }
+		  String cardnumberString = new String(scardNo);
+		  return cardnumberString;
+	  }
+	
+	public String getCardNows(String lineForCN) //
+	  {	  int j=0;
+		  char[] cardNows=lineForCN.toCharArray();
+		  char[] scardNows= new char[19];
+		  for(int i=34;i<53;i++)
+		  {	 
+			  	scardNows[j]=cardNows[i];
+			  	j++;
+			  
+		  }
+		  String cardnumberwsString = new String(scardNows);
+		  return cardnumberwsString;
+	  }
+	  
+	  
+	  public String getCardHolderName(String lineforcardholder) // extraction
+	  {	  int j=0;
+	  char[] cardhn=lineforcardholder.toCharArray();
+	  char[] scardhn= new char[25];
+	  for(int i=143;i<168;i++)
+	  {	  
+		  	scardhn[j]=cardhn[i];
+		  	j++;
+	  }
+	  
+	  String cardholdername = new String(scardhn);
+	  return cardholdername;
+	  }
+	  
+	  public String getidMMYY(String lineForidMMYY) // get issue date in MM/YY format
+	  {	  int j=0;
+	  char[] idMMYY=lineForidMMYY.toCharArray();
+	  char[] idmmyy= new char[5];
+	  	idmmyy[0]=idMMYY[71];
+	  	idmmyy[1]=idMMYY[72];
+	  	idmmyy[2]='/';
+	  	idmmyy[3]=idMMYY[69];
+	  	idmmyy[4]=idMMYY[70];
+	  
+	  String IDMMYY = new String(idmmyy);
+	  return IDMMYY;
+	  }
+	  
+	  public String getedMMYY(String lineForedMMYY) // get expiry date in format MM/YY
+	  {	  int j=0;
+	  char[] edMMYY=lineForedMMYY.toCharArray();
+	  char[] edmmyy= new char[5];
+	  	edmmyy[0]=edMMYY[67];
+	  	edmmyy[1]=edMMYY[68];
+	  	edmmyy[2]='/';
+	  	edmmyy[3]=edMMYY[65];
+	  	edmmyy[4]=edMMYY[66];
+	  
+	  String EDMMYY = new String(edmmyy);
+	  return EDMMYY;
+	  }
+	  
+	  public String getaedate(String lineForaedate) //get application affective date
+	  {	  int j=0;
+	  char[] aedate=lineForaedate.toCharArray();
+	  char[] aeDATE= new char[6];
+	  for(int i=69;i<73;i++)
+	  {	  
+		  aeDATE[j]=aedate[i];
+		  	j++;
+	  }
+	  aeDATE[4]='0';
+	  aeDATE[5]='1';
+	  String AEDATE = new String(aeDATE);
+	  return AEDATE;
+	  }
+	  
+	  public String getl4dCardNo(String getL4DCardNo) //Method to get last 4 digits of the card number
+	  {	
+		  int j=0;
+	  char[] last4digit=getL4DCardNo.toCharArray();
+	  char[] l4dcn= new char[4];
+	  for(int i=49;i<53;i++)
+	  {	  
+		  l4dcn[j]=last4digit[i];
+		  	j++;
+	  }
+	  
+	  String L4DCN = new String(l4dcn);
+	  return L4DCN;
+	  }
+	  
+	  public String getedYYMM(String lineForedYYMM) //get expiry date in YYMM
+	  {	  int j=0;
+	  char[] edYYMM=lineForedYYMM.toCharArray();
+	  char[] edyymm= new char[5];  
+	  for(int i=65;i<69;i++)
+	  {	  
+		  edyymm[j]=edYYMM[i];
+		  	j++;
+	  }
+	  String EDYYMM = new String(edyymm);
+	  return EDYYMM;
+	  }
+	  
+	  public String t1data(String linefortrackone)
+	  { int j=0;
+	  	char[] trackone=linefortrackone.toCharArray();
+	  	char[] track1val=new char[79];
+	  	for(int i=124;i<203;i++)
+	  	{
+	  		track1val[j]=trackone[i];
+	  		j++;
+	  	}
+	  	String tRACK1Val = new String(track1val);
+		return tRACK1Val;
+		  
+	  }
+	  
+	  public String t2data( String linefortracktwo)
+	  { int j=0;
+	  	char[] tracktwo=linefortracktwo.toCharArray();
+	  	char[] track2value=new char[39];
+	  	for(int i=208;i<246;i++)
+	  	{	
+	  		track2value[j]=tracktwo[i];
+	  		j++;
+	  	}
+	  	String tRACK2Val = new String(track2value);
+		return tRACK2Val;
+		  
+	  }
+	  
+	  public String t2dd( String linefortracktwod)
+	  { int j=0;
+	  	char[] tracktwod=linefortracktwod.toCharArray();
+	  	char[] track2dvalue=new char[10];
+	  	for(int i=236;i<246;i++)
+	  	{	
+	  		track2dvalue[j]=tracktwod[i];
+	  		j++;
+	  	}
+	  	String tRACK2dVal = new String(track2dvalue);
+		return tRACK2dVal;
+		  
+	  }
+	  
+	  public String t2edata( String tracktwoed)
+	  { 
+	  	String cardno=getCardNo(tracktwoed);
+	  	String icvv =Icvv(tracktwoed);
+	  	String servcode=ServiceCode(tracktwoed);
+	  	String edYYMM = getedYYMM(tracktwoed);
+	  	String t2data = t2dd(tracktwoed);
+	  	String f = "F";
+	  	String d = "D";
+	  	String startpoint="57=";
+	  	String track2DData= startpoint+cardno+d+edYYMM+servcode+icvv+t2data+f;
+	  	
+		return track2DData;
+		  
+	  }
+	  public String t1dd( String linefortrackoned)
+	  { int j=0;
+	  	String iCVV=Icvv(linefortrackoned);
+	  	String aCard=AdharNum(linefortrackoned);
+	  	char[] icvv=iCVV.toCharArray();
+	  	
+	  	char[] acard=aCard.toCharArray();
+	  	char[] track1dvalue=new char[34];
+	  	for(int i=0;i<6;i++)
+	  	{	if((i%2)==0)
+	  		{
+	  		track1dvalue[i]='3';
+	  		}else
+	  			{track1dvalue[i]=icvv[j];
+	  			j++;}
+	  	}
+	  	j=1;
+	  	track1dvalue[6]='4';
+	  	track1dvalue[7]='1';
+	  	for(int i=8;i<32;i++)
+	  	{	if((i%2)==0)
+	  		{
+	  		track1dvalue[i]='3';
+	  		}else
+	  			{
+	  			track1dvalue[i]=acard[j];
+	  			j++;}
+	  	}
+	  	
+	  	
+	  	String tRACK1dVal = new String(track1dvalue);
+		return tRACK1dVal;
+		  
+	  }
+	  
+}
